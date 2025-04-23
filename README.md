@@ -6,12 +6,11 @@
 
 This repository is a collection of answers for past entrance examination questions for the Graduate School of Information Science and Technology, the University of Tokyo.
 
-[数理情報学専攻のHP](https://www.i.u-tokyo.ac.jp/edu/course/mi/admission.shtml)も参照して下さい。
+[数理情報学専攻のHP](https://www.i.u-tokyo.ac.jp/edu/course/mi/admission.shtml)も参照して下さい。いくつかの過去問も掲載されています。
 また、[私が執筆したnote](https://note.com/hari64boli64/n/n9b8c923dfbd7)も必要であればご参照下さい。
 
-Please also refer to the [official website](https://www.i.u-tokyo.ac.jp/edu/course/mi/admission.shtml).
+Please also refer to the [official website](https://www.i.u-tokyo.ac.jp/edu/course/mi/admission.shtml). Some past problems are also available there.
 If necessary, please refer to the [note I wrote](https://note.com/hari64boli64/n/n9b8c923dfbd7).
-
 
 ## 掲載問題 Problems
 
