@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -51,11 +51,11 @@ $M=1$の場合、四角い石が出た時点で操作は停止される。
 よって、状態$C_0$から$n$個石を並べたときに初めて停止条件を満たす確率$a_{0n}$は、
 
 \begin{align*}
-    a_{0n} =
-    \begin{cases}
-        0            & (n = 0   ) \\
-        (1-q)^{n-1}q & (n \geq 1)
-    \end{cases}
+  a_{0n} =
+  \begin{cases}
+    0            & (n = 0   ) \\
+    (1-q)^{n-1}q & (n \geq 1)
+  \end{cases}
 \end{align*}
 
 となる。
@@ -63,21 +63,21 @@ $M=1$の場合、四角い石が出た時点で操作は停止される。
 よって、
 
 \begin{align*}
-    \mathbb{E}[L] & = \sum_{n=0}^{\infty} na_{0n}                   \\
-                  & = \sum_{n=1}^{\infty} n(1-q)^{n-1}q             \\
-                  & = q\dv{t}\qty(\sum_{n=1}^{\infty}{t^n})_{t=1-q} \\
-                  & = q\dv{t}\qty(\frac{1}{1-t})_{t=1-q}            \\
-                  & = q\frac{1}{\qty(1-(1-q))^2}                    \\
-                  & = \frac{1}{q}                                   \\
+  \mathbb{E}[L] & = \sum_{n=0}^{\infty} na_{0n}                   \\
+                & = \sum_{n=1}^{\infty} n(1-q)^{n-1}q             \\
+                & = q\dv{t}\qty(\sum_{n=1}^{\infty}{t^n})_{t=1-q} \\
+                & = q\dv{t}\qty(\frac{1}{1-t})_{t=1-q}            \\
+                & = q\frac{1}{\qty(1-(1-q))^2}                    \\
+                & = \frac{1}{q}
 \end{align*}
 
 
 \begin{align*}
-    \mathbb{V}[L] & = \mathbb{E}[L^2] - \mathbb{E}[L]^2                   \\
-                  & = \sum_{n=0}^{\infty} n^2a_{0n} - \frac{1}{q^2}       \\
-                  & = \sum_{n=1}^{\infty} n^2(1-q)^{n-1}q - \frac{1}{q^2} \\
-                  & = \frac{2-q}{q^2}-\frac{1}{q^2}                       \\
-                  & = \frac{1-q}{q^2}                                     \\
+  \mathbb{V}[L] & = \mathbb{E}[L^2] - \mathbb{E}[L]^2                   \\
+                & = \sum_{n=0}^{\infty} n^2a_{0n} - \frac{1}{q^2}       \\
+                & = \sum_{n=1}^{\infty} n^2(1-q)^{n-1}q - \frac{1}{q^2} \\
+                & = \frac{2-q}{q^2}-\frac{1}{q^2}                       \\
+                & = \frac{1-q}{q^2}
 \end{align*}
 
 となる。
@@ -93,33 +93,33 @@ $M=1$の場合、四角い石が出た時点で操作は停止される。
 $k<M$の場合を考える。この時、状態遷移図は図\ref{img:automaton}のようになる。
 
 \begin{figure}[htbp]
-    \begin{center}
-        \includegraphics[height=70mm]{automaton.png}
-        \caption{automaton}
-        \label{img:automaton}
-    \end{center}
+  \begin{center}
+    \includegraphics[height=70mm]{automaton.png}
+    \caption{automaton}
+    \label{img:automaton}
+  \end{center}
 \end{figure}
 
 この図に示した通り、
 
 \begin{quote}
-    \begin{itemize}
-        \item 確率$q$で四角い石が出る時、1個石を並べた上で、状態$C_{k+1}$に遷移する。
-        \item 確率$1-q$で丸石が出る時、1個石を並べた上で、状態$C_0$に遷移する。
-    \end{itemize}
+  \begin{itemize}
+    \item 確率$q$で四角い石が出る時、1個石を並べた上で、状態$C_{k+1}$に遷移する。
+    \item 確率$1-q$で丸石が出る時、1個石を並べた上で、状態$C_0$に遷移する。
+  \end{itemize}
 \end{quote}
 
 という関係性があるので、
 
-\begin{align*}
-    A_k(t)=qtA_{k+1}(t)+(1-q)tA_0(t) \quad (0 \leq k < M)
-\end{align*}
+\begin{equation*}
+  A_k(t)=qtA_{k+1}(t)+(1-q)tA_0(t) \quad (0 \leq k < M)
+\end{equation*}
 
 となる。あるいは、同じことだが、
 
-\begin{align*}
-    A_{M-i}(t)=qtA_{M-i+1}(t)+(1-q)tA_0(t) \quad (0 < i \leq M)
-\end{align*}
+\begin{equation*}
+  A_{M-i}(t)=qtA_{M-i+1}(t)+(1-q)tA_0(t) \quad (0 < i \leq M)
+\end{equation*}
 
 となる。
 
@@ -130,15 +130,15 @@ $k<M$の場合を考える。この時、状態遷移図は図\ref{img:automaton
 (2)の結果より、
 
 \begin{align*}
-    A_{M-1}(t) & =qtA_{M}(t)+(1-q)tA_0(t)                                  \\
-               & =qt+(1-q)tA_0(t)                                          \\
-    A_{M-2}(t) & =qtA_{M-1}(t)+(1-q)tA_0(t)                                \\
-               & =qt\qty(qt+(1-q)tA_0(t))+(1-q)tA_0(t)                     \\
-               & =q^2t^2+(1-q)qt^2A_0(t)+(1-q)tA_0(t)                      \\
-               & =q^2t^2+\qty((1-q)qt^2+(1-q)t)A_0(t)                      \\
-    A_{M-3}(t) & =qtA_{M-2}(t)+(1-q)tA_0(t)                                \\
-               & =qt\qty(q^2t^2+\qty((1-q)qt^2+(1-q)t)A_0(t))+(1-q)tA_0(t) \\
-               & =q^3t^3+\qty((1-q)q^2t^3+(1-q)qt^2+(1-q)t)A_0(t)          \\
+  A_{M-1}(t) & =qtA_{M}(t)+(1-q)tA_0(t)                                  \\
+             & =qt+(1-q)tA_0(t)                                          \\
+  A_{M-2}(t) & =qtA_{M-1}(t)+(1-q)tA_0(t)                                \\
+             & =qt\qty(qt+(1-q)tA_0(t))+(1-q)tA_0(t)                     \\
+             & =q^2t^2+(1-q)qt^2A_0(t)+(1-q)tA_0(t)                      \\
+             & =q^2t^2+\qty((1-q)qt^2+(1-q)t)A_0(t)                      \\
+  A_{M-3}(t) & =qtA_{M-2}(t)+(1-q)tA_0(t)                                \\
+             & =qt\qty(q^2t^2+\qty((1-q)qt^2+(1-q)t)A_0(t))+(1-q)tA_0(t) \\
+             & =q^3t^3+\qty((1-q)q^2t^3+(1-q)qt^2+(1-q)t)A_0(t)
 \end{align*}
 
 
@@ -147,26 +147,26 @@ $k<M$の場合を考える。この時、状態遷移図は図\ref{img:automaton
 つまり、
 
 \begin{align*}
-    A_{M-i}(t) & =q^it^i+\qty(\sum_{j=0}^{i-1}(1-q)q^{j}t^{j+1})A_0(t)                \\
-               & =(qt)^i+(1-q)t\qty(\sum_{j=0}^{i-1}(qt)^{j})A_0(t)                   \\
-               & =(qt)^i+(1-q)t\qty(\frac{1-(qt)^i}{1-qt})A_0(t) \quad (0 < i \leq M)
+  A_{M-i}(t) & =q^i t^i+\qty(\sum_{j=0}^{i-1}(1-q)q^{j}t^{j+1})A_0(t)               \\
+             & =(qt)^i+(1-q)t\qty(\sum_{j=0}^{i-1}(qt)^{j})A_0(t)                   \\
+             & =(qt)^i+(1-q)t\qty(\frac{1-(qt)^i}{1-qt})A_0(t) \quad (0 < i \leq M)
 \end{align*}
 
 となる。
 
 特に、$i=M$の場合を考えると、
 
-\begin{align*}
-    A_0(t)  = (qt)^M+(1-q)t\qty(\frac{1-(qt)^M}{1-qt})A_0(t) \\
-\end{align*}
+\begin{equation*}
+  A_0(t)  = (qt)^M+(1-q)t\qty(\frac{1-(qt)^M}{1-qt})A_0(t)
+\end{equation*}
 
 整理して、
 
 \begin{align*}
-    A_0(t)     & =\frac{(qt)^M}{1-(1-q)t\qty(\frac{1-(qt)^M}{1-qt})} = \frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M}         \\
-    A_{M-i}(t) & =(qt)^i+(1-q)t\qty(\frac{1-(qt)^i}{1-qt})\frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M} \quad (0 < i \leq M) \\
-               & =   (qt)^i \frac{1-t+t(1-q)(qt)^{M-i}}{1-t+t(1-q)(qt)^M} \quad (0 < i \leq M)                       \\
-    A_{k}(t)   & =(qt)^{M-k} \frac{1-t+t(1-q)(qt)^{k}}{1-t+t(1-q)(qt)^M} \quad (0 \leq k < M)                        \\
+  A_0(t)     & =\frac{(qt)^M}{1-(1-q)t\qty(\frac{1-(qt)^M}{1-qt})} = \frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M}         \\
+  A_{M-i}(t) & =(qt)^i+(1-q)t\qty(\frac{1-(qt)^i}{1-qt})\frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M} \quad (0 < i \leq M) \\
+             & =   (qt)^i \frac{1-t+t(1-q)(qt)^{M-i}}{1-t+t(1-q)(qt)^M} \quad (0 < i \leq M)                       \\
+  A_{k}(t)   & =(qt)^{M-k} \frac{1-t+t(1-q)(qt)^{k}}{1-t+t(1-q)(qt)^M} \quad (0 \leq k < M)
 \end{align*}
 
 となる。
@@ -175,7 +175,7 @@ $k<M$の場合を考える。この時、状態遷移図は図\ref{img:automaton
 
 (3)の結果より、
 \begin{equation*}
-    A_0(t) =\frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M}
+  A_0(t) =\frac{(1-qt)(qt)^M}{1-t+t(1-q)(qt)^M}
 \end{equation*}
 である。
 
@@ -184,7 +184,7 @@ $k<M$の場合を考える。この時、状態遷移図は図\ref{img:automaton
 よって、これを微分して、代入整理すると、
 
 \begin{equation*}
-    \frac{1-q^M}{(1-q)q^M}
+  \frac{1-q^M}{(1-q)q^M}
 \end{equation*}
 
 となる。
@@ -264,8 +264,8 @@ avg=13.7934
 確かに、大まかに一致しているため、正しいと考えられる。
 
 \begin{thebibliography}{9}
-    \bibitem{site:geo}
-    数学の景色.“幾何分布の期待値(平均)・分散・標準偏差とその導出証明”.2021年9月13日.\url{https://mathlandscape.com/geometric-distrib-ev/}
+  \bibitem{site:geo}
+  数学の景色.``幾何分布の期待値(平均)・分散・標準偏差とその導出証明''.2021年9月13日.\url{https://mathlandscape.com/geometric-distrib-ev/}
 \end{thebibliography}
 
 \end{document}

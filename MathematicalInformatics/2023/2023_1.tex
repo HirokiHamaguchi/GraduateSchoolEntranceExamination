@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -44,12 +44,12 @@
 
 \section{問題}
 
-\begin{align*}
+\begin{equation*}
   f(A,B)=\log{
   \frac{1}{m}\sum_{i=1}^{m}{
   \frac{1}{\frac{1}{n}\sum_{j=1}^{n}{\exp(-|a_i-b_j|)}}}
   }
-\end{align*}
+\end{equation*}
 
 \section{解答}
 
@@ -75,7 +75,7 @@
   \Leftarrow & \sum_{j=1}^{n}{\frac{\sum_{k=1}^{l}\exp(-|a_i-c_k|)}{\sum_{k=1}^{l}\exp(-|b_j-c_k|)}} \geq \sum_{j=1}^{n}\exp(-|a_i-b_j|)                                                                                                                                    \\
   \Leftarrow & \sum_{k=1}^{l}\exp(-|a_i-c_k|) \geq \exp(-|a_i-b_j|)\qty(\sum_{k=1}^{l}\exp(-|b_j-c_k|))                                                                                                                                                                     \\
   \Leftarrow & \exp(-|a_i-c_k|) \geq \exp(-|a_i-b_j|)\exp(-|b_j-c_k|)                                                                                                                                                                                                       \\
-  \Leftarrow & |a_i-c_k| \leq |a_i-b_j|+|b_j-c_k|                                                                                                                                                                                                                           \\
+  \Leftarrow & |a_i-c_k| \leq |a_i-b_j|+|b_j-c_k|
 \end{align*}
 
 最後の不等式は、三角不等式より成立する。
@@ -85,9 +85,9 @@
 \subsection*{(3)}
 
 区分求積法そのままなので、
-\begin{align*}
+\begin{equation*}
   h(z)=\int_0^1{\exp(-|z-x|)}\dd{x}
-\end{align*}
+\end{equation*}
 である。
 
 よって、

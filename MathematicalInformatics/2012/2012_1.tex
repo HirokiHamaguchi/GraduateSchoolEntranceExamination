@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -50,21 +50,21 @@
 
 \subsection*{(1)}
 
-\begin{align*}
-  \frac{1}{2^n}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\cdots\sum_{\sigma_n=\pm1}\bm{\sigma}^TA\bm{\sigma}=\Tr A
-\end{align*}
+\begin{equation*}
+  \frac{1}{2^n}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\cdots\sum_{\sigma_n=\pm1}\bm{\sigma}^\top A\bm{\sigma}=\Tr A
+\end{equation*}
 
 \subsection*{(2)}
 
-\begin{align*}
-  \frac{1}{2^3}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\sum_{\sigma_3=\pm1}\frac{1}{2 \pi i}\oint_{|z|=1}\bm{\sigma}^T(zI-A)^{-1}\bm{\sigma}dz=3
-\end{align*}
+\begin{equation*}
+  \frac{1}{2^3}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\sum_{\sigma_3=\pm1}\frac{1}{2 \pi i}\oint_{|z|=1}\bm{\sigma}^\top (zI-A)^{-1}\bm{\sigma}dz=3
+\end{equation*}
 
 \subsection*{(3)}
 
-\begin{align*}
-  \frac{1}{2^n}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\cdots\sum_{\sigma_n=\pm1}\frac{1}{2 \pi i}\oint_{\partial D}\bm{\sigma}^T(zI-A)^{-1}\bm{\sigma}dz=\text{D内の固有値の個数(重複を含む)}
-\end{align*}
+\begin{equation*}
+  \frac{1}{2^n}\sum_{\sigma_1=\pm1}\sum_{\sigma_2=\pm1}\cdots\sum_{\sigma_n=\pm1}\frac{1}{2 \pi i}\oint_{\partial D}\bm{\sigma}^\top (zI-A)^{-1}\bm{\sigma}dz=\text{D内の固有値の個数(重複を含む)}
+\end{equation*}
 
 \section{知識}
 

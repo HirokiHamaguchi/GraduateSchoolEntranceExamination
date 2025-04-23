@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -66,8 +66,8 @@
 (2)より、
 
 \begin{align*}
-  3x_1^2-4x_1x_2-2x_2^2+s \geq & t_1(-2x_1^2-2x_1x_2-x_2^2+4)                         \\
-  +                            & t_2(x_1^2-1) \quad (\forall \bm{x} \in \mathbb{R}^n)
+  3x_1^2-4x_1x_2-2x_2^2+s \geq {} & t_1(-2x_1^2-2x_1x_2-x_2^2+4)                         \\
+  +                               & t_2(x_1^2-1) \quad (\forall \bm{x} \in \mathbb{R}^n)
 \end{align*}
 
 を満たす$t_1,t_2$が存在する範囲内で、$s$を最小化すればよい。

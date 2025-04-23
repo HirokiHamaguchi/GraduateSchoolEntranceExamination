@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -66,17 +66,17 @@
 
 \begin{align*}
               & \begin{cases}
-    \dv{r}{t}=r-r^3               \\
-    \dv{\theta}{t}=1-\cos{\theta} \\
-  \end{cases} \\
+                  \dv{r}{t}=r-r^3               \\
+                  \dv{\theta}{t}=1-\cos{\theta} \\
+                \end{cases}                                    \\
   \Rightarrow & \begin{cases}
-    \int \frac{1}{r-r^3} dr=\int dt                  \\
-    \int \frac{1}{1-\cos{\theta}}\dv{\theta}=\int dt \\
-  \end{cases} \\
+                  \int \frac{1}{r-r^3} dr=\int dt                  \\
+                  \int \frac{1}{1-\cos{\theta}}\dv{\theta}=\int dt \\
+                \end{cases}       \\
   \Rightarrow & \begin{cases}
-    r=\sqrt{\frac{1}{\qty(\frac{1}{r_0^2}-1)e^{-2t}+1}}              \\
-    \theta=2\arctan{\frac{1}{-t+\frac{1}{\tan{\frac{\theta_0}{2}}}}} \\
-  \end{cases}
+                  r=\sqrt{\frac{1}{\qty(\frac{1}{r_0^2}-1)e^{-2t}+1}}              \\
+                  \theta=2\arctan{\frac{1}{-t+\frac{1}{\tan{\frac{\theta_0}{2}}}}} \\
+                \end{cases}
 \end{align*}
 
 前者は部分分数分解、後者は三角関数の半角公式を用いて解いた。
@@ -186,7 +186,7 @@ $p$は$\theta$を意味する。角度のグラフに関しては、Pythonのarc
 
 \begin{align*}
   \int \frac{1}{x^2+a^2} dx & = \int \frac{1}{a^2}\cos{^2\theta} \frac{a}{\cos^2{\theta}}d\theta \quad (x=a\tan{\theta}) \\
-                            & = \frac{1}{a}\arctan{\frac{x}{a}}+C                                                        \\
+                            & = \frac{1}{a}\arctan{\frac{x}{a}}+C
 \end{align*}
 
 \subsubsection{$\sqrt{x^2+a^2}$}
@@ -197,7 +197,7 @@ $p$は$\theta$を意味する。角度のグラフに関しては、Pythonのarc
 
 \begin{align*}
   \int \frac{1}{\sqrt{x^2+1}} dx & = \int \frac{1}{t} dt \quad (t=x+\sqrt{x^2+1}) \\
-                                 & = \log{\qty(x+\sqrt{x^2+1})}+C                 \\
+                                 & = \log{\qty(x+\sqrt{x^2+1})}+C
 \end{align*}
 
 
@@ -209,9 +209,9 @@ $p$は$\theta$を意味する。角度のグラフに関しては、Pythonのarc
 
 \begin{thebibliography}{9}
   \bibitem{site:1}
-  matplotlib.“matplotlib.pyplot.streamplot”.2020年1月5日.\url{https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.streamplot.html}
+  matplotlib.``matplotlib.pyplot.streamplot''.2020年1月5日.\url{https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.streamplot.html}
   \bibitem{site:2}
-  受験の月."高校数学3 積分法（基本計算パターン）".\url{https://examist.jp/category/mathematics/integration/}
+  受験の月.``高校数学3 積分法（基本計算パターン）''.\url{https://examist.jp/category/mathematics/integration/}
 \end{thebibliography}
 
 \end{document}

@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -51,27 +51,27 @@
 \subsection*{(1)}
 
 \begin{align*}
-    [(M,X),X]   & =(M,X)X-X(M,X)     \\
-                & =MX^2+XMX-XMX-X^2M \\
-                & =MX^2-X^2M         \\
-    [(M,X),X]^T & =(MX^2-X^2M)^T     \\
-                & =MX^2-X^2M
+  [(M,X),X]      & =(M,X)X-X(M,X)     \\
+                 & =MX^2+XMX-XMX-X^2M \\
+                 & =MX^2-X^2M         \\
+  [(M,X),X]^\top & =(MX^2-X^2M)^\top  \\
+                 & =MX^2-X^2M
 \end{align*}
 
 よって、
 
-\begin{align*}
-    \dv{(X-X^T)}{t}=0 \\
-\end{align*}
+\begin{equation*}
+  \dv{(X-X^\top )}{t}=0
+\end{equation*}
 
-これは、初期状態が対称行列であることと合わせると、常に$X=X^T$であることを示す。
+これは、初期状態が対称行列であることと合わせると、常に$X=X^\top $であることを示す。
 
 \subsection*{(2)}
 
 \begin{align*}
-    (M,X)^T & =M^TX^T+X^TM^T \\
-            & =-MX-XM        \\
-            & =-(M,X)
+  (M,X)^\top & =M^\top X^\top +X^\top M^\top \\
+             & =-MX-XM                       \\
+             & =-(M,X)
 \end{align*}
 
 より、$(M,X)$は歪対称行列である。
@@ -79,11 +79,11 @@
 よって、
 
 \begin{align*}
-    \dv{X}{t} & =\dv{Q}{t}X_0Q^T+QX_0\dv{Q^T}{t} \\
-              & =(M,X)QX_0Q^T+QX_0Q^T(M,X)^T     \\
-              & =(M,X)X+X(M,X)^T                 \\
-              & =(M,X)X-X(M,X)                   \\
-              & =[(M,X),X]
+  \dv{X}{t} & =\dv{Q}{t}X_0Q^\top +QX_0\dv{Q^\top }{t} \\
+            & =(M,X)QX_0Q^\top +QX_0Q^\top (M,X)^\top  \\
+            & =(M,X)X+X(M,X)^\top                      \\
+            & =(M,X)X-X(M,X)                           \\
+            & =[(M,X),X]
 \end{align*}
 
 となり、示される。
@@ -93,14 +93,14 @@
 $Q$が直交行列であれば、同じ固有値を持つ。
 
 \begin{align*}
-    \dv{Q^TQ}{t} & =Q^T(M,X)^TQ+Q^T(M,X)Q \\
-                 & =-Q^T(M,X)Q+Q^T(M,X)Q  \\
-                 & =0
+  \dv{Q^\top Q}{t} & =Q^\top (M,X)^\top Q+Q^\top (M,X)Q \\
+                   & =-Q^\top (M,X)Q+Q^\top (M,X)Q      \\
+                   & =0
 \end{align*}
 
-これは、初期状態が単位行列であることと合わせると、常に$Q^TQ=I$であることを示す。
+これは、初期状態が単位行列であることと合わせると、常に$Q^\top Q=I$であることを示す。
 
-(何故か$\dv{QQ^T}{t}=0$を示す方針は、未だ不明)
+(何故か$\dv{QQ^\top }{t}=0$を示す方針は、未だ不明)
 
 \subsection*{(4)}
 

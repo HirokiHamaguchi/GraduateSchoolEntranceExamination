@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -77,26 +77,26 @@
 なお、このような形で書けることは、以下で確認することが出来る。
 
 \begin{align*}
-    & \sum_{m=0}^{N-1}e(m,n)c'_m                                       \\
-  = & \frac{1}{N}\sum_{m=0}^{N-1}e(m,n)\sum_{n'=0}^{N-1}e(-m,n')g_{n'} \\
-  = & \frac{1}{N}\sum_{n'=0}^{N-1}\sum_{m=0}^{N-1}e(m,n)e(-m,n')g_{n'} \\
-  = & \frac{1}{N}\sum_{n'=0}^{N-1}\sum_{m=0}^{N-1}e(m,n-n')g_{n'}      \\
-  = & \frac{1}{N}\sum_{n'=0}^{N-1}N\delta_{n,n'}g_{n'}                 \\
-  = & \frac{1}{N}Ng_n                                                  \\
-  = & g_n                                                              \\
+      & \sum_{m=0}^{N-1}e(m,n)c'_m                                       \\
+  ={} & \frac{1}{N}\sum_{m=0}^{N-1}e(m,n)\sum_{n'=0}^{N-1}e(-m,n')g_{n'} \\
+  ={} & \frac{1}{N}\sum_{n'=0}^{N-1}\sum_{m=0}^{N-1}e(m,n)e(-m,n')g_{n'} \\
+  ={} & \frac{1}{N}\sum_{n'=0}^{N-1}\sum_{m=0}^{N-1}e(m,n-n')g_{n'}      \\
+  ={} & \frac{1}{N}\sum_{n'=0}^{N-1}N\delta_{n,n'}g_{n'}                 \\
+  ={} & \frac{1}{N}Ng_n                                                  \\
+  ={} & g_n
 \end{align*}
 
 この事を利用すると、
 
-\begin{align*}
+\begin{equation*}
   x(n,t)=\sum_{m=0}^{N-1}e(m,n)f_m(t) \quad (c_m=c'_m)
-\end{align*}
+\end{equation*}
 
 とすれば、
 
-\begin{align*}
+\begin{equation*}
   x(n,0)=\sum_{m=0}^{N-1}e(m,n)c_m=g_n
-\end{align*}
+\end{equation*}
 
 となり、特に、(1)より、これは条件(*),(**)を共に満たす。
 
@@ -104,7 +104,7 @@
 
 \begin{align*}
   x(n,t) & =\sum_{m=0}^{N-1}e(m,n)f_m(t)                                                                                                        \\
-         & =\sum_{m=0}^{N-1}e(m,n)\qty(\frac{1}{N}\sum_{n'=0}^{N-1}e(-m,n')g_{n'})e^{\qty(\exp(-i\frac{2\pi m}{N})+\exp(i\frac{2\pi m}{N})-2)t} \\
+         & =\sum_{m=0}^{N-1}e(m,n)\qty(\frac{1}{N}\sum_{n'=0}^{N-1}e(-m,n')g_{n'})e^{\qty(\exp(-i\frac{2\pi m}{N})+\exp(i\frac{2\pi m}{N})-2)t}
 \end{align*}
 
 が解となる。
@@ -115,7 +115,7 @@
   \lim_{t\to\infty}x(n,t) & =\lim_{t\to\infty}\sum_{m=0}^{N-1}e(m,n)c_me^{\qty(\exp(-i\frac{2\pi m}{N})+\exp(i\frac{2\pi m}{N})-2)t} \\
                           & =c_0                                                                                                     \\
                           & =\frac{1}{N}\sum_{n=0}^{N-1}e(0,n)g_n                                                                    \\
-                          & =\frac{1}{N}\sum_{n=0}^{N-1}g_n                                                                          \\
+                          & =\frac{1}{N}\sum_{n=0}^{N-1}g_n
 \end{align*}
 
 \section{知識}
@@ -124,8 +124,8 @@
 
 \begin{thebibliography}{9}
   \bibitem{site:1}
-  金沢大学."離散フーリエ変換の計算法".\url{http://leo.ec.t.kanazawa-u.ac.jp/~nakayama/edu/file/signal_proc_ch4.pdf}
+  金沢大学.``離散フーリエ変換の計算法''.\url{http://leo.ec.t.kanazawa-u.ac.jp/~nakayama/edu/file/signal_proc_ch4.pdf}
   \bibitem{site:2}
-  Wikipedia."離散フーリエ変換".2022年12月28日.\url{https://ja.wikipedia.org/wiki/%E9%9B%A2%E6%95%A3%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B}
+  Wikipedia.``離散フーリエ変換''.2022年12月28日.\url{https://ja.wikipedia.org/wiki/%E9%9B%A2%E6%95%A3%E3%83%95%E3%83%BC%E3%83%AA%E3%82%A8%E5%A4%89%E6%8F%9B}
 \end{thebibliography}
 \end{document}

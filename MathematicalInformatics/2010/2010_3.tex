@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -70,7 +70,7 @@ $v(\frac{1}{2}B)=\frac{1}{2^n}v(B) > 1$より、(3)の結果から、
 
 \begin{align*}
                   & \exists \bm{x},\bm{y} \in \frac{1}{2}B \text{ s.t. } \bm{x}-\bm{y} \in \mathbb{Z}^n \\
-  \Leftrightarrow & \exists \bm{2x},\bm{2y} \in B \text{ s.t. } \bm{x}-\bm{y} \in \mathbb{Z}^n          \\
+  \Leftrightarrow & \exists \bm{2x},\bm{2y} \in B \text{ s.t. } \bm{x}-\bm{y} \in \mathbb{Z}^n
 \end{align*}
 
 $B$の凸性と原点対称性から、$\frac{1}{2}\qty(\bm{2x}+(-\bm{2y}))=\bm{x}-\bm{y}$も$B$に含まれる。
@@ -83,7 +83,7 @@ $B$の凸性と原点対称性から、$\frac{1}{2}\qty(\bm{2x}+(-\bm{2y}))=\bm{
 
 \begin{align*}
   B & =\left\{\{g_j\}_{1 \leq j\leq 3} \middle| \sum_{i=1}^{3} \left\lvert \sum_{j=1}^{3}r_{ij}g_j \right\rvert < \alpha \right\} \\
-    & =\left\{\bm{g}\in \mathbb{R}^3 \middle| ||R\bm{g}||_1 < \alpha \right\}
+    & =\left\{\bm{g}\in \mathbb{R}^3 \middle| \norm{R\bm{g}}_1 < \alpha \right\}
 \end{align*}
 
 Bが原点対称な有界凸集合であることは明らか。
@@ -92,9 +92,9 @@ Bが原点対称な有界凸集合であることは明らか。
 
 行列式の6倍は四面体の体積を表すことに注意すると、
 
-\begin{align*}
+\begin{equation*}
   v(B)=2^3 \alpha^3 \frac{1}{6\det R} \leq 2^3
-\end{align*}
+\end{equation*}
 
 (ここ、もう少し説明のしようがあると思われるが、あまり良い説明が思いつかない)
 
@@ -106,7 +106,7 @@ Bが原点対称な有界凸集合であることは明らか。
 
 \begin{thebibliography}{9}
   \bibitem{site:1}
-  高校数学の美しい物語."四面体の体積を求める2つの公式with行列式".2021年3月7日.\url{https://manabitimes.jp/math/1012}
+  高校数学の美しい物語.``四面体の体積を求める2つの公式with行列式''.2021年3月7日.\url{https://manabitimes.jp/math/1012}
 \end{thebibliography}
 
 \end{document}

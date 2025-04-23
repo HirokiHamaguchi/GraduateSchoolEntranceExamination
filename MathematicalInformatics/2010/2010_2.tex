@@ -8,7 +8,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -17,7 +17,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -33,7 +33,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -67,9 +67,9 @@ $P(X=1|Y=0)=\frac{P(X=1,Y=0)}{P(Y=0)}=\frac{0.1\epsilon}{0.9-0.8\epsilon}$
 \subsection*{(2)}
 
 \begin{align*}
-  P(X=1|Z_n=z_n) & =\frac{P(X=1,Z_n=z_n)}{P(Z_n=z_n)}                                                                                                              \\
-                 & =\frac{\epsilon 0.9^{z_n} 0.1^{n-z_n} {}_nC_{z_n}}{\epsilon 0.9^{z_n} 0.1^{n-z_n} {}_nC_{z_n} + (1-\epsilon) 0.1^{z_n} 0.9^{n-z_n} {}_nC_{z_n}} \\
-                 & =\frac{\epsilon 0.1^{n-z_n}}{\epsilon 0.1^{n-z_n} + (1-\epsilon) 0.9^{n-z_n}}                                                                   \\
+  P(X=1|Z_n=z_n) & =\frac{P(X=1,Z_n=z_n)}{P(Z_n=z_n)}                                                                                                                 \\
+                 & =\frac{\epsilon 0.9^{z_n} 0.1^{n-z_n} {}_n C_{z_n}}{\epsilon 0.9^{z_n} 0.1^{n-z_n} {}_n C_{z_n} + (1-\epsilon) 0.1^{z_n} 0.9^{n-z_n} {}_n C_{z_n}} \\
+                 & =\frac{\epsilon 0.1^{n-z_n}}{\epsilon 0.1^{n-z_n} + (1-\epsilon) 0.9^{n-z_n}}
 \end{align*}
 
 \subsection*{(3)}
@@ -83,9 +83,9 @@ $P(X=1|Y=0)=\frac{P(X=1,Y=0)}{P(Y=0)}=\frac{0.1\epsilon}{0.9-0.8\epsilon}$
 この結果から、期待値は、
 
 \begin{align*}
-  \sum_{n=0,2|n}^{\infty}n 0.18^{\frac{n-2}{2}} (0.9^2+0.1^2) = & \frac{2\times 0.82}{0.18}\sum_{n=1}^{\infty/2}n(0.18)^n \\
-  =                                                             & \frac{1.64}{0.18}\frac{0.18}{(1-0.18)^2}                \\
-  =                                                             & 2.439024390243902\cdots
+  \sum_{n=0,2|n}^{\infty}n 0.18^{\frac{n-2}{2}} (0.9^2+0.1^2) ={} & \frac{2\times 0.82}{0.18}\sum_{n=1}^{\infty/2}n(0.18)^n \\
+  ={}                                                             & \frac{1.64}{0.18}\frac{0.18}{(1-0.18)^2}                \\
+  ={}                                                             & 2.439024390243902\cdots
 \end{align*}
 
 となる。

@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -52,27 +52,27 @@
 
 \subsection*{(1)}
 
-\begin{align*}
+\begin{equation*}
   a(P(t,n-1)-P(t,n))+b((n+1)P(t,n+1)-nP(t,n))
-\end{align*}
+\end{equation*}
 
 \subsection*{(2)}
 
-\begin{align*}
+\begin{equation*}
   M(t)=\frac{a}{b}+\qty(\lambda-\frac{a}{b})e^{-bt}
-\end{align*}
+\end{equation*}
 
 \subsection*{(3)}
 
-\begin{align*}
+\begin{equation*}
   \pdv{G(t,s)}{s}=(s-1)\qty(aG(t,s)-b\pdv{G(t,s)}{s})
-\end{align*}
+\end{equation*}
 
 $\bar{G}(s)=1$より、
 
-\begin{align*}
+\begin{equation*}
   \bar{G}(s)=e^{\frac{a}{b}(s-1)}
-\end{align*}
+\end{equation*}
 
 \subsection*{(4)}
 

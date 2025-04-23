@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -60,18 +60,18 @@
   \Leftrightarrow & \sum_{i=1}^{n}\sum_{j=1}^{n}{L_{ij}u_j}=0       \\
   \Leftrightarrow & \sum_{i=1}^{n}{(Lu)_i}=0                        \\
   \Leftrightarrow & \sum_{i=1}^{n}{\lambda u_i}=0                   \\
-  \Leftrightarrow & \sum_{i=1}^{n}{u_i}=0                           \\
+  \Leftrightarrow & \sum_{i=1}^{n}{u_i}=0
 \end{align*}
 
 \subsection*{(4)}
 \begin{align*}
-  \bm{x}^T L \bm{x} & =\sum_{i,j}x_i L_{ij} x_j                                                                \\
-                    & =\sum_{i,j}x_i (D_{ij}-A_{ij}) x_j                                                       \\
-                    & =\sum_{i}x_i^2 D_{ii}-\sum_{i<j}x_i x_j A_{ij}- \sum_{i>j}x_i x_j A_{ij}                 \\
-                    & =\sum_{i}\qty(x_i^2 \sum_{j}{A_{ij}})-\sum_{i<j}x_i x_j A_{ij}- \sum_{i<j}x_j x_i A_{ji} \\
-                    & =\sum_{i<j}(x_i^2 -2x_i x_j +x_j^2) A_{ij}                                               \\
-                    & =\sum_{i<j}a_{ij}(x_i -x_j)^2                                                            \\
-                    & \geq 0
+  \bm{x}^\top  L \bm{x} & =\sum_{i,j}x_i L_{ij} x_j                                                                \\
+                        & =\sum_{i,j}x_i (D_{ij}-A_{ij}) x_j                                                       \\
+                        & =\sum_{i}x_i^2 D_{ii}-\sum_{i<j}x_i x_j A_{ij}- \sum_{i>j}x_i x_j A_{ij}                 \\
+                        & =\sum_{i}\qty(x_i^2 \sum_{j}{A_{ij}})-\sum_{i<j}x_i x_j A_{ij}- \sum_{i<j}x_j x_i A_{ji} \\
+                        & =\sum_{i<j}(x_i^2 -2x_i x_j +x_j^2) A_{ij}                                               \\
+                        & =\sum_{i<j}a_{ij}(x_i -x_j)^2                                                            \\
+                        & \geq 0
 \end{align*}
 
 \subsection*{(5)}

@@ -7,7 +7,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{color}
 \usepackage[dvipdfmx, colorlinks=true, allcolors=blue]{hyperref}
-\usepackage{listings, jlisting}
+\usepackage{listings}
 \usepackage{tikz}
 \usepackage{physics}
 \usepackage{url}
@@ -16,7 +16,7 @@
 \allowdisplaybreaks[4]
 \frenchspacing
 \definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
-\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{Orange}{rgb}{0.89,0.55,0}
 \definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
 \lstset{
   language={c++},
@@ -32,7 +32,7 @@
   lineskip=-0.9ex,
   keywordstyle={\small\bfseries\color{SkyBlue}},  
   commentstyle={\color{OliveGreen}}, 
-  stringstyle={\small\ttfamily\color{Orenge}}    
+  stringstyle={\small\ttfamily\color{Orange}}    
 }
 
 \begin{document}
@@ -45,15 +45,15 @@
 \section{問題}
 
 \begin{align*}
-  \text{maximize}_{\bm{u},\bm{v}} \quad & \bm{a}^T(\bm{u}-\bm{v})              \\
-  \text{subject to} \quad               & \bm{1}^T\bm{u}+\bm{1}^T\bm{v} \leq 1 \\
-                                        & \bm{u}\geq \bm{0},\bm{v}\geq \bm{0}  \\
+  \text{maximize}_{\bm{u},\bm{v}} \quad & \bm{a}^\top (\bm{u}-\bm{v})                  \\
+  \text{subject to} \quad               & \bm{1}^\top \bm{u}+\bm{1}^\top \bm{v} \leq 1 \\
+                                        & \bm{u}\geq \bm{0},\bm{v}\geq \bm{0}
 \end{align*}
 
 
 \begin{align*}
-  \text{minimize}_{\bm{x}} \quad & \bm{x}^TQ^{-1}\bm{x}    \\
-  \text{subject to} \quad        & ||\bm{x}||_{\infty} = 1 \\
+  \text{minimize}_{\bm{x}} \quad & \bm{x}^\top Q^{-1}\bm{x} \\
+  \text{subject to} \quad        & ||\bm{x}||_{\infty} = 1
 \end{align*}
 
 \section{解答}
@@ -78,28 +78,28 @@ todo
 
 {\color{lightgray}
 
-まず、$||\bm{x}||_2=1$という制約に変更した問題を解く。
+  まず、$||\bm{x}||_2=1$という制約に変更した問題を解く。
 
-$Q=P^TDP$と分解する。ただし、$P$は直交行列で、$D$は対角行列であり、
+  $Q=P^\top DP$と分解する。ただし、$P$は直交行列で、$D$は対角行列であり、
 
-\begin{align*}
-  D=\mqty(d_1 &  & \\ & \ddots & \\ & & d_n)
-\end{align*}
+  \begin{align*}
+    D=\mqty(d_1 &  & \\ & \ddots & \\ & & d_n)
+  \end{align*}
 
-とする。
+  とする。
 
-$Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義可能である。
+  $Q^{-1}=P^\top D^{-1}P$である。なお、正定値性より、$D^{-1}$は定義可能である。
 
-その上で、
+  その上で、
 
-\begin{align*}
-  \bm{x}^TQ^{-1}\bm{x} & = \bm{x}^TP^TD^{-1}P\bm{x}                                                      \\
-                       & = (P\bm{x})^TD^{-1}(P\bm{x})                                                    \\
-                       & = \bm{y}^TD^{-1}\bm{y} \quad (\bm{y}=P\bm{x},||\bm{y}||_2=\bm{x}^TP^TP\bm{x}=1) \\
-                       & = \sum_{i=1}^{n}\frac{y_i^2}{d_i}                                               \\
-\end{align*}
+  \begin{align*}
+    \bm{x}^\top Q^{-1}\bm{x} & = \bm{x}^\top P^\top D^{-1}P\bm{x}                                                          \\
+                             & = (P\bm{x})^\top D^{-1}(P\bm{x})                                                            \\
+                             & = \bm{y}^\top D^{-1}\bm{y} \quad (\bm{y}=P\bm{x},||\bm{y}||_2=\bm{x}^\top P^\top P\bm{x}=1) \\
+                             & = \sum_{i=1}^{n}\frac{y_i^2}{d_i}
+  \end{align*}
 
-となるので、この制約下における解は、$Q$の最大固有値を$d_{\text{max}}$として、$\frac{1}{d_{\text{max}}}$となる。
+  となるので、この制約下における解は、$Q$の最大固有値を$d_{\text{max}}$として、$\frac{1}{d_{\text{max}}}$となる。
 
 }
 
@@ -110,8 +110,8 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 まず、$x_k=1(1\leq k \leq n)$という制約に変更した問題を解く。
 
 \begin{align*}
-  \pdv{L}{\bm{x}} & =\pdv{\bm{x}} \qty(\bm{x}^TQ^{-1}\bm{x}-\lambda(x_k-1)) \\
-                  & = 2Q^{-1}\bm{x}-\lambda \bm{e}_k                        \\
+  \pdv{L}{\bm{x}} & =\pdv{\bm{x}} \qty(\bm{x}^\top Q^{-1}\bm{x}-\lambda(x_k-1)) \\
+                  & = 2Q^{-1}\bm{x}-\lambda \bm{e}_k                            \\
                   & = 0
 \end{align*}
 
@@ -127,10 +127,10 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 と置くと、
 
 \begin{align*}
-  \bm{x}^TQ^{-1}\bm{x} & =\frac{1}{q_{kk}^2}\bm{e}_k^TQ^TQ^{-1}Q\bm{e}_k \\
-                       & =\frac{1}{q_{kk}^2}\bm{e}_k^TQ\bm{e}_k          \\
-                       & =\frac{1}{q_{kk}^2}q_{kk}                       \\
-                       & =\frac{1}{q_{kk}}
+  \bm{x}^\top Q^{-1}\bm{x} & =\frac{1}{q_{kk}^2}\bm{e}_k^\top Q^\top Q^{-1}Q\bm{e}_k \\
+                           & =\frac{1}{q_{kk}^2}\bm{e}_k^\top Q\bm{e}_k              \\
+                           & =\frac{1}{q_{kk}^2}q_{kk}                               \\
+                           & =\frac{1}{q_{kk}}
 \end{align*}
 
 となる。よって、最小値の候補は、$Q$の対角成分の最大値を$d_{\text{max}}=d_k$として、$\frac{1}{d_{\text{max}}}$となる。
@@ -140,7 +140,7 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 
 \begin{align*}
   \bm{x} & =\frac{1}{q_{kk}}Q\bm{e}_k   \\
-         & =\mqty(\frac{q_{1k}}{q_{kk}} \\ \vdots \\ 1 \\ \vdots \\ \frac{q_{nk}}{q_{kk}})\\
+         & =\mqty(\frac{q_{1k}}{q_{kk}} \\ \vdots \\ 1 \\ \vdots \\ \frac{q_{nk}}{q_{kk}})
 \end{align*}
 
 が、$||\bm{x}||_\infty=1$を満たすことから分かる。
@@ -149,9 +149,9 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 
 \begin{align*}
               & \begin{cases}
-    q_{ii}+q_{kk}+2q_{ik} \geq 0 \\
-    q_{ii}+q_{kk}-2q_{ik} \geq 0 \\
-  \end{cases}                                                         \\
+                  q_{ii}+q_{kk}+2q_{ik} \geq 0 \\
+                  q_{ii}+q_{kk}-2q_{ik} \geq 0 \\
+                \end{cases}                                                      \\
   \Rightarrow & 1 \geq \frac{q_{ii}+q_{kk}}{2} \geq  q_{ik} \geq -\frac{q_{ii}+q_{kk}}{2} \geq -1
 \end{align*}
 
@@ -159,9 +159,9 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 
 \subsubsection*{(2-2)}
 
-\begin{align*}
+\begin{equation*}
   C=d_{\text{max}}
-\end{align*}
+\end{equation*}
 
 \section{知識}
 
@@ -169,32 +169,32 @@ $Q^{-1}=P^TD^{-1}P$である。なお、正定値性より、$D^{-1}$は定義�
 
 \begin{align*}
   \max_{x,y} \quad  & f(x,y)     \\
-  \text{s.t.} \quad & g(x,y) = 0 \\
+  \text{s.t.} \quad & g(x,y) = 0
 \end{align*}
 
 この問題は、以下のように解ける。
 
-\begin{align*}
+\begin{equation*}
   L(x,y,\lambda) = f(x,y) - \lambda g(x,y)
-\end{align*}
+\end{equation*}
 
 とおくと、$(\alpha,\beta)$が極値を与えるならば、$(\alpha,\beta)$は
 
-\begin{align*}
+\begin{equation*}
   \pdv{L}{x} = \pdv{L}{y} = \pdv{L}{\lambda} = 0
-\end{align*}
+\end{equation*}
 
 の解、または、
 
-\begin{align*}
+\begin{equation*}
   \pdv{g}{x} = \pdv{g}{y} = 0
-\end{align*}
+\end{equation*}
 
 の解。\cite{site:1}
 
 \begin{thebibliography}{9}
   \bibitem{site:1}
-  高校数学の美しい物語.“ラグランジュの未定乗数法と例題”.2021年3月7日.\url{https://manabitimes.jp/math/879}
+  高校数学の美しい物語.``ラグランジュの未定乗数法と例題''.2021年3月7日.\url{https://manabitimes.jp/math/879}
 \end{thebibliography}
 
 
