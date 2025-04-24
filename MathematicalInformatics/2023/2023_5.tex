@@ -133,7 +133,7 @@ $w$が減少すれば、終了する。
 
 以上より、疎な三値表現以外の表現によって、$w$の最小値は達成されないことが示された。
 
-\subsection*{(5)}
+\subsection*{(5) 解法1}
 
 あまり想定解な気はしないが、一応1/3の値が出てきたので、書いておく。
 
@@ -186,6 +186,31 @@ $010$の場合に当該桁が0になる確率を考える。
 他も同様。
 
 よって、期待値は$1/3$と示された。
+
+\subsection*{(5) 解法2}
+
+Thanks to @Carpenters-Cat (\href{https://github.com/HirokiHamaguchi/GraduateSchoolEntranceExamination/issues/9}{GitHub issue})
+
+$w(z)$で$z\leq L_n$の疎な三値表現$(d_1, d_2, \dots, d_n)$における非零成分の個数$w(d_1, d_2, \dots, d_n)$と定義する。
+$S_n \coloneqq \sum_{z \leq L_n} w(z)$と定義すると、$\mathbb{E}[Y_n] = S_n / L_n$である。
+
+$n \geq 3$について、$S_n$についての漸化式を作る。
+\begin{align*}
+  S_{n} & = \sum_{z \leq L_{n-1}} w(z) + \sum_{L_{n-1} < z \leq L_{n}} w(z)                            \\
+        & = S_{n-1} + \sum_{L_{n-1} < z \leq L_{n}} (w(z-2^n) + 1) \quad (\because \text{疎な三値表現の最後は1}) \\
+        & = S_{n-1} + (L_n - L_{n-1}) + \sum_{z=-L_{n-2}}^{+L_{n-2}} w(z) \quad (\because (1))         \\
+        & = S_{n-1} + (L_n - L_{n-1}) + 2 S_{n-2}
+\end{align*}
+故に、
+\begin{gather*}
+  \frac{2^{n+1}-1}{3} \leq L_n - L_{n-1} \leq \frac{2^{n+1}+1}{3}\\
+  S_{n-1} + 2 S_{n-2} + \frac{2^n-1}{3} \leq S_n \leq S_{n-1} + 2 S_{n-2} + \frac{2^n+1}{3}
+\end{gather*}
+が分かる。
+
+あとは漸化式を適当に解くなり、$E[Y_n]=S_n / L_n$の形にして極限を求めれるなりすれば良い。
+
+(雑になら簡単だが、厳密にやるのは少し骨が折れそう、私は考えていません。すいません。)
 
 \section{知識}
 
